@@ -28,11 +28,10 @@ class IconSetRepository
         'bootstrap',
     ];
 
+    /**
+     * @var array<string, IconSet>
+     */
     private array $iconSets;
-
-    private array $terms = [
-        'crypto',
-    ];
 
     public function __construct(
         private Iconify $iconify,
@@ -77,6 +76,9 @@ class IconSetRepository
         return null;
     }
 
+    /**
+     * @param array<string, mixed> $data
+     */
     private static function createIconSet(string $identifier, array $data): IconSet
     {
         return new IconSet(

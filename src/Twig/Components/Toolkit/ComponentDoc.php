@@ -18,15 +18,10 @@ use Symfony\UX\Toolkit\Recipe\Recipe;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent]
-class ComponentDoc
+final class ComponentDoc
 {
     public ToolkitKitId $kitId;
     public Recipe $component;
-
-    /**
-     * @see https://regex101.com/r/8L2pPy/1
-     */
-    private const RE_CODE_BLOCK = '/```(?P<language>[a-z]+?)\s*(?P<options>\{.+?\})?\n(?P<code>.+?)```/s';
 
     public function __construct(
         private readonly ToolkitService $toolkitService,

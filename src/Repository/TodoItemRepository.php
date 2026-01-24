@@ -17,11 +17,6 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<TodoItem>
- *
- * @method TodoItem|null find($id, $lockMode = null, $lockVersion = null)
- * @method TodoItem|null findOneBy(array $criteria, array $orderBy = null)
- * @method TodoItem[]    findAll()
- * @method TodoItem[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class TodoItemRepository extends ServiceEntityRepository
 {

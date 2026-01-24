@@ -14,7 +14,7 @@ namespace App\Twig\Components\Code;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('CodeBlockInline', template: 'components/Code/CodeBlockInline.html.twig')]
-class CodeBlockInline
+final class CodeBlockInline
 {
     public string $code;
     public string $language;

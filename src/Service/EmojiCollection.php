@@ -20,8 +20,14 @@ namespace App\Service;
  */
 final class EmojiCollection implements \IteratorAggregate, \Countable
 {
+    /**
+     * @var list<string>
+     */
     private array $emojis;
 
+    /**
+     * @param list<string> $emojis
+     */
     public function __construct(array $emojis = [])
     {
         $this->emojis = $emojis ?: $this->loadEmojis();
@@ -42,6 +48,9 @@ final class EmojiCollection implements \IteratorAggregate, \Countable
         return \count($this->emojis);
     }
 
+    /**
+     * @return list<string>
+     */
     private function loadEmojis(): array
     {
         return [

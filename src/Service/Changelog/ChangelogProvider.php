@@ -26,6 +26,9 @@ final class ChangelogProvider
     ) {
     }
 
+    /**
+     * @return array<int, array{id: int, name: string, version: string, date: string, body: string}>
+     */
     public function getChangelog(int $page = 1): array
     {
         $changelog = [];
@@ -37,6 +40,9 @@ final class ChangelogProvider
         return $changelog;
     }
 
+    /**
+     * @return array<int, array{id: int, name: string, version: string, date: string, body: string}>
+     */
     private function getReleases(int $page = 1): array
     {
         return $this->cache->get('releases-symfony-ux-'.$page, function (CacheItemInterface $item) use ($page) {

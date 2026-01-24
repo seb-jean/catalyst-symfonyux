@@ -14,7 +14,7 @@ namespace App\Twig\Components;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent]
-class BootstrapModal
+final class BootstrapModal
 {
     public ?string $id = null;
 }

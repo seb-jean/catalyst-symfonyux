@@ -12,6 +12,7 @@
 namespace App\Twig\Components;
 
 use App\Form\MealPlannerForm;
+use App\Model\MealPlan;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
@@ -19,11 +20,14 @@ use Symfony\UX\LiveComponent\ComponentWithFormTrait;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent]
-class MealPlanner extends AbstractController
+final class MealPlanner extends AbstractController
 {
     use ComponentWithFormTrait;
     use DefaultActionTrait;
 
+    /**
+     * @return FormInterface<MealPlan>
+     */
     protected function instantiateForm(): FormInterface
     {
         return $this->createForm(MealPlannerForm::class);

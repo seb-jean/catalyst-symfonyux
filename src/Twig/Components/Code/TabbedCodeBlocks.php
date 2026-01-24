@@ -15,8 +15,11 @@ use App\Util\FilenameHelper;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('Code:TabbedCodeBlocks')]
-class TabbedCodeBlocks
+final class TabbedCodeBlocks
 {
+    /**
+     * @var array<string, mixed>
+     */
     public array $files = [];
 
     public function getItemId(string $filename): string

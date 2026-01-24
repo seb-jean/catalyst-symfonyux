@@ -29,7 +29,7 @@ class LiveDemoRepository
                 publishedAt: '2024-06-07',
                 tags: ['grid', 'pagination', 'loading', 'scroll'],
                 longDescription: <<<EOF
-                    The second and final part of the **Infinite Scroll Serie**, with a new range of (lovely) T-Shirts!
+                    The second and final part of the **Infinite Scroll Series**, with a new range of (lovely) T-Shirts!
                     Now with `automatic loading on scroll`, a new trick and amazing `loading animations`!
                     EOF,
             ),
@@ -201,6 +201,9 @@ class LiveDemoRepository
         return current($demos);
     }
 
+    /**
+     * @throws \InvalidArgumentException if the demo is not found
+     */
     public function find(string $identifier): LiveDemo
     {
         $demos = $this->findAll();

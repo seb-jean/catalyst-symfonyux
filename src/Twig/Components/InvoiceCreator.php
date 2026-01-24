@@ -28,7 +28,7 @@ use Symfony\UX\LiveComponent\ValidatableComponentTrait;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsLiveComponent]
-class InvoiceCreator extends AbstractController
+final class InvoiceCreator extends AbstractController
 {
     use DefaultActionTrait;
     use ValidatableComponentTrait;
@@ -37,6 +37,9 @@ class InvoiceCreator extends AbstractController
     #[Valid]
     public Invoice $invoice;
 
+    /**
+     * @var list<array{productId: int|null, quantity: int, isEditing: bool}>
+     */
     #[LiveProp]
     public array $lineItems = [];
 
@@ -77,7 +80,7 @@ class InvoiceCreator extends AbstractController
     }
 
     #[LiveListener('line_item:change_edit_mode')]
-    public function onLineItemEditModeChange(#[LiveArg] int $key, #[LiveArg] $isEditing): void
+    public function onLineItemEditModeChange(#[LiveArg] int $key, #[LiveArg] bool $isEditing): void
     {
         $this->lineItems[$key]['isEditing'] = $isEditing;
     }
@@ -95,7 +98,7 @@ class InvoiceCreator extends AbstractController
     }
 
     #[LiveAction]
-    public function saveInvoice(EntityManagerInterface $entityManager)
+    public function saveInvoice(EntityManagerInterface $entityManager): mixed
     {
         $this->saveFailed = true;
         $this->validate();
@@ -145,6 +148,8 @@ class InvoiceCreator extends AbstractController
         // Keep the lineItems in sync with the invoice: new InvoiceItems may
         //      not have been given the same key as the original lineItems
         $this->lineItems = $this->populateLineItems($this->invoice);
+
+        return null;
     }
 
     public function getSubtotal(): float
@@ -183,6 +188,9 @@ class InvoiceCreator extends AbstractController
         return false;
     }
 
+    /**
+     * @return list<array{productId: int|null, quantity: int, isEditing: bool}>
+     */
     private function populateLineItems(Invoice $invoice): array
     {
         $lineItems = [];

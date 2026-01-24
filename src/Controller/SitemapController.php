@@ -76,6 +76,9 @@ final class SitemapController extends AbstractController
         }
     }
 
+    /**
+     * @param array<string, mixed> $parameters
+     */
     private function generateAbsoluteUrl(string $route, array $parameters = []): string
     {
         return $this->generateUrl($route, $parameters, UrlGeneratorInterface::ABSOLUTE_URL);

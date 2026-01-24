@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('CodeBlock', template: 'components/Code/CodeBlock.html.twig')]
-class CodeBlock
+final class CodeBlock
 {
     public string $filename;
     public string $height = '300px';
@@ -176,7 +176,7 @@ class CodeBlock
         };
     }
 
-    public function getElementId(): ?string
+    public function getElementId(): string
     {
         return FilenameHelper::getElementId($this->filename);
     }
@@ -186,6 +186,8 @@ class CodeBlock
      *
      * This allows us to inject some HTML (e.g. a <span> around use statements)
      * that will be kept raw / not highlighted.
+     *
+     * @return list<array{content: string, highlight: bool}>
      */
     private function splitAndProcessSource(string $content): array
     {

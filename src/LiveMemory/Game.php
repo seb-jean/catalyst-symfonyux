@@ -32,7 +32,7 @@ class Game
     /**
      * Map of game card as <cardKey> => <cardValue>.
      *
-     * @var list<int, string>
+     * @var list<string>
      */
     private readonly array $cards;
 
@@ -101,6 +101,9 @@ class Game
         return \count($this->cards);
     }
 
+    /**
+     * @return array{int, int}
+     */
     public function getGrid(): array
     {
         $cardCount = $this->getCardCount();
@@ -111,6 +114,9 @@ class Game
         ];
     }
 
+    /**
+     * @return list<int>
+     */
     public function getFlips(): array
     {
         return $this->flips;
@@ -129,6 +135,9 @@ class Game
         $this->flips[] = $key;
     }
 
+    /**
+     * @return array<int>
+     */
     public function getMatches(): array
     {
         return $this->matches;
@@ -150,6 +159,9 @@ class Game
         $this->matches[] = $key;
     }
 
+    /**
+     * @return list<int>
+     */
     public function getCurrentPair(): array
     {
         $selectedPairs = $this->getSelectedPairs();
@@ -157,6 +169,9 @@ class Game
         return array_pop($selectedPairs) ?? [];
     }
 
+    /**
+     * @return list<list<int>>
+     */
     public function getSelectedPairs(): array
     {
         return array_chunk($this->getFlips(), 2);
@@ -228,13 +243,10 @@ class Game
 
     public function getTime(): int
     {
-        if (null !== $start = $this->getCreatedAt()) {
-            $end = ($this->getEndedAt() ?? new \DateTimeImmutable('now'));
+        $start = $this->getCreatedAt();
+        $end = ($this->getEndedAt() ?? new \DateTimeImmutable('now'));
 
-            return $end->getTimestamp() - $start->getTimestamp();
-        }
-
-        return 5;
+        return $end->getTimestamp() - $start->getTimestamp();
     }
 
     public function getCreatedAt(): \DateTimeImmutable

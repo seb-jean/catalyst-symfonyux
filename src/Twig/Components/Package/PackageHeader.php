@@ -17,7 +17,7 @@ use App\Service\UxPackageRepository;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('PackageHeader', template: 'components/Package/PackageHeader.html.twig')]
-class PackageHeader
+final class PackageHeader
 {
     public UxPackage $package;
 

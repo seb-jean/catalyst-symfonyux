@@ -13,6 +13,9 @@ namespace App\Model;
 
 final class LiveDemo extends Demo
 {
+    /**
+     * @param list<string> $tags
+     */
     public function __construct(
         string $identifier,
         string $name,

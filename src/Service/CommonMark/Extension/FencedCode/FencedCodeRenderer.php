@@ -17,15 +17,15 @@ use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;
 use Symfony\UX\TwigComponent\ComponentRendererInterface;
 
-final readonly class FencedCodeRenderer implements NodeRendererInterface
+final class FencedCodeRenderer implements NodeRendererInterface
 {
     public function __construct(
-        private ComponentRendererInterface $componentRenderer,
+        private readonly ComponentRendererInterface $componentRenderer,
     ) {
     }
 
     #[\Override]
-    public function render(Node $node, ChildNodeRendererInterface $childRenderer): \Stringable|string|null
+    public function render(Node $node, ChildNodeRendererInterface $childRenderer): string
     {
         if (!$node instanceof FencedCode) {
             throw new \InvalidArgumentException('Block must be instance of '.FencedCode::class);

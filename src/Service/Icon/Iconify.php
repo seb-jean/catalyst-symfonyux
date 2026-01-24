@@ -26,6 +26,9 @@ final class Iconify
     ) {
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function search(string $query, ?string $prefix = null, int $limit = 32, ?int $start = null): array
     {
         return $this->http
@@ -41,11 +44,17 @@ final class Iconify
         ;
     }
 
-    public function collection(string $name): ?array
+    /**
+     * @return array<string, mixed>
+     */
+    public function collection(string $name): array
     {
         return $this->collectionData($name);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function collectionStyles(string $prefix): array
     {
         $data = $this->collectionData($prefix);
@@ -56,6 +65,9 @@ final class Iconify
         return $styles;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function collectionCategories(string $prefix): array
     {
         $data = $this->collectionData($prefix);
@@ -74,6 +86,9 @@ final class Iconify
         return $categories;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function collectionData(string $prefix): array
     {
         return $this->cache->get('iconify-collection-'.$prefix, function (ItemInterface $item) use ($prefix) {
@@ -87,6 +102,9 @@ final class Iconify
         });
     }
 
+    /**
+     * @return list<string>
+     */
     public function collectionIcons(string $prefix): array
     {
         $icons = [];
@@ -105,6 +123,9 @@ final class Iconify
         return array_keys($icons);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function collections(): array
     {
         return $this->cache->get('iconify-collections', function (ItemInterface $item) {

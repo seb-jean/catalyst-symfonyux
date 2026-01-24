@@ -22,7 +22,7 @@ use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\LiveComponent\ValidatableComponentTrait;
 
 #[AsLiveComponent]
-class InlineEditFood extends AbstractController
+final class InlineEditFood extends AbstractController
 {
     use DefaultActionTrait;
     use ValidatableComponentTrait;
@@ -46,13 +46,13 @@ class InlineEditFood extends AbstractController
     public ?string $flashMessage = null;
 
     #[LiveAction]
-    public function activateEditing()
+    public function activateEditing(): void
     {
         $this->isEditing = true;
     }
 
     #[LiveAction]
-    public function save(EntityManagerInterface $entityManager)
+    public function save(EntityManagerInterface $entityManager): void
     {
         // if validation fails, this throws an exception & the component re-renders
         $this->validate();

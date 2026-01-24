@@ -21,7 +21,7 @@ use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent]
-class FoodVote extends AbstractController
+final class FoodVote extends AbstractController
 {
     use DefaultActionTrait;
 
@@ -36,7 +36,7 @@ class FoodVote extends AbstractController
     }
 
     #[LiveAction]
-    public function vote(#[LiveArg] string $direction)
+    public function vote(#[LiveArg] string $direction): void
     {
         if ('up' === $direction) {
             $this->food->upVote();

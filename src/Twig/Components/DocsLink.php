@@ -15,7 +15,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsTwigComponent]
-class DocsLink
+final class DocsLink
 {
     public string $size = 'md';
     public string $url;

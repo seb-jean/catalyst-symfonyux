@@ -16,7 +16,7 @@ use App\Service\LiveDemoRepository;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('Demo:PrevNext')]
-class PrevNextDemo
+final class PrevNextDemo
 {
     public function __construct(
         private readonly LiveDemoRepository $demoRepository,

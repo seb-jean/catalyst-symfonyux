@@ -23,7 +23,7 @@ use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\TwigComponent\Attribute\PostMount;
 
 #[AsLiveComponent('Icon:IconModal')]
-class IconModal
+final class IconModal
 {
     use DefaultActionTrait;
 

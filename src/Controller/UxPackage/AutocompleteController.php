@@ -57,10 +57,13 @@ class AutocompleteController extends AbstractController
         return $words[array_rand($words)];
     }
 
+    /**
+     * @param Collection<int, Food> $foods
+     */
     private function generateEatingMessage(Collection $foods, string $name): string
     {
         $i = 0;
-        $foodStrings = $foods->map(function (Food $food) use (&$i, $foods) {
+        $foodStrings = $foods->map(static function (Food $food) use (&$i, $foods) {
             ++$i;
             $str = $food->getName();
 

@@ -16,6 +16,9 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
+/**
+ * @extends AbstractType<array<string, mixed>>
+ */
 class SendNotificationForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -33,6 +36,9 @@ class SendNotificationForm extends AbstractType
             ]);
     }
 
+    /**
+     * @return array<int, string>
+     */
     public static function getTextChoices(): array
     {
         return [

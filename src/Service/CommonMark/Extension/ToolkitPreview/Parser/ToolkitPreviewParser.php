@@ -73,7 +73,7 @@ final class ToolkitPreviewParser extends AbstractBlockContinueParser
         return false;
     }
 
-    public function tryContinue(Cursor $cursor, BlockContinueParserInterface $activeBlockParser): ?BlockContinue
+    public function tryContinue(Cursor $cursor, BlockContinueParserInterface $activeBlockParser): BlockContinue
     {
         if ($cursor->isBlank()) {
             return BlockContinue::at($cursor);

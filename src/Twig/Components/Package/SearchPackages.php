@@ -17,7 +17,7 @@ use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent('SearchPackages', template: 'components/Package/SearchPackages.html.twig')]
-class SearchPackages
+final class SearchPackages
 {
     use DefaultActionTrait;
 
@@ -28,6 +28,9 @@ class SearchPackages
     {
     }
 
+    /**
+     * @return list<\App\Model\UxPackage>
+     */
     public function getPackages(): array
     {
         return $this->packageRepo->findAll($this->query);

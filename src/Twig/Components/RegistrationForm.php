@@ -21,7 +21,7 @@ use Symfony\UX\LiveComponent\ComponentWithFormTrait;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent]
-class RegistrationForm extends AbstractController
+final class RegistrationForm extends AbstractController
 {
     use ComponentWithFormTrait;
     use DefaultActionTrait;
@@ -31,6 +31,9 @@ class RegistrationForm extends AbstractController
     #[LiveProp]
     public ?string $newUserEmail = null;
 
+    /**
+     * @phpstan-ignore missingType.generics
+     */
     protected function instantiateForm(): FormInterface
     {
         return $this->createForm(RegistrationFormType::class);
@@ -42,7 +45,7 @@ class RegistrationForm extends AbstractController
     }
 
     #[LiveAction]
-    public function saveRegistration()
+    public function saveRegistration(): void
     {
         $this->submitForm();
 

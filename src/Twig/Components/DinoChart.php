@@ -20,10 +20,11 @@ use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsLiveComponent]
-class DinoChart
+final class DinoChart
 {
     use DefaultActionTrait;
 
+    /** @var list<string> */
     #[LiveProp(writable: true)]
     public array $currentTypes = ['all', 'large theropod', 'small theropod'];
 
@@ -85,6 +86,9 @@ class DinoChart
         return $chart;
     }
 
+    /**
+     * @return list<string>
+     */
     #[ExposeInTemplate]
     public function allTypes(): array
     {

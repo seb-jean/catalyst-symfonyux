@@ -30,6 +30,9 @@ class TodoList
     #[NotBlank]
     private ?string $name = null;
 
+    /**
+     * @var Collection<int, TodoItem>
+     */
     #[ORM\OneToMany(mappedBy: 'todoList', targetEntity: TodoItem::class, orphanRemoval: true, cascade: ['persist'])]
     #[Valid]
     private Collection $todoItems;

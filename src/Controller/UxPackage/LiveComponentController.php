@@ -37,11 +37,13 @@ class LiveComponentController extends AbstractController
             return $this->redirectToRoute('app_demos');
         }
 
-        // Permanent Redirect old URL
-        if (null !== $liveDemo = $liveDemoRepository->find($demo)) {
-            return $this->redirectToRoute($liveDemo->getRoute(), [], 301);
-        }
+        try {
+            // Permanent Redirect old URL
+            $liveDemo = $liveDemoRepository->find($demo);
 
-        throw $this->createNotFoundException(\sprintf('Live Component demo "%s" not found.', $demo));
+            return $this->redirectToRoute($liveDemo->getRoute(), [], 301);
+        } catch (\InvalidArgumentException $e) {
+            throw $this->createNotFoundException(\sprintf('Live Component demo "%s" not found.', $demo), previous: $e);
+        }
     }
 }

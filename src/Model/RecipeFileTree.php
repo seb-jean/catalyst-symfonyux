@@ -13,6 +13,9 @@ namespace App\Model;
 
 class RecipeFileTree
 {
+    /**
+     * @var array<string, array<string, mixed>>
+     */
     private array $files = [];
 
     public function __construct()
@@ -45,11 +48,17 @@ class RecipeFileTree
         return $this;
     }
 
+    /**
+     * @return array<string, array<string, mixed>>
+     */
     public function getFiles(): array
     {
         return $this->buildFileTree('');
     }
 
+    /**
+     * @return array<string, array<string, mixed>>
+     */
     public function buildFileTree(string $targetDirectory): array
     {
         $files = [];

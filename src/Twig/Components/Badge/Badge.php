@@ -14,6 +14,9 @@ namespace App\Twig\Components\Badge;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
+/**
+ * @phpstan-ignore-next-line symfonyUX.twigComponent.classMustBeFinal
+ */
 #[AsTwigComponent(
     name: 'Badge',
     template: 'components/Badge.html.twig',
@@ -29,6 +32,9 @@ class Badge
 
     public string $url;
 
+    /**
+     * @return array{icon: ?string, label: string, value: string, url: ?string}
+     */
     #[ExposeInTemplate(destruct: true)]
     public function getBadge(): array
     {
@@ -40,22 +46,22 @@ class Badge
         ];
     }
 
-    protected function getLabel(): string
+    private function getLabel(): string
     {
         return $this->label;
     }
 
-    protected function getValue(): string
+    private function getValue(): string
     {
         return $this->value ?? '';
     }
 
-    protected function getIcon(): ?string
+    private function getIcon(): string
     {
         return $this->icon;
     }
 
-    protected function getUrl(): ?string
+    private function getUrl(): string
     {
         return $this->url ?? '';
     }

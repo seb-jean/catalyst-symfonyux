@@ -20,7 +20,7 @@ use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent('Icon:IconSearch')]
-class IconSearch
+final class IconSearch
 {
     use DefaultActionTrait;
 
@@ -32,6 +32,7 @@ class IconSearch
     #[LiveProp(writable: true, url: true)]
     public ?string $set = null;
 
+    /** @var list<Icon> */
     private array $icons;
 
     public function __construct(
@@ -40,6 +41,9 @@ class IconSearch
     ) {
     }
 
+    /**
+     * @return array<string, array<string, string>>
+     */
     public function getIconSetOptionGroups(): array
     {
         $groups = [];
@@ -66,6 +70,9 @@ class IconSearch
         return substr(md5(serialize([$this->query, $this->set])), 0, 8);
     }
 
+    /**
+     * @return list<Icon>
+     */
     public function icons(): array
     {
         return $this->icons ??= $this->searchIcons();
@@ -76,6 +83,9 @@ class IconSearch
         return $this->set ? $this->iconSetRepository->get($this->set) : null;
     }
 
+    /**
+     * @return list<Icon>
+     */
     private function searchIcons(): array
     {
         if (!$this->query) {
@@ -90,6 +100,6 @@ class IconSearch
 
         $icons = $this->iconify->search($this->query, $this->set, self::PER_PAGE)['icons'];
 
-        return array_map(fn ($icon) => Icon::fromIdentifier($icon), $icons);
+        return array_map(static fn ($icon) => Icon::fromIdentifier($icon), $icons);
     }
 }

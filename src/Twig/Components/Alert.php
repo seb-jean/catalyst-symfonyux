@@ -14,7 +14,7 @@ namespace App\Twig\Components;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent]
-class Alert
+final class Alert
 {
     public string $type = 'success';
     public string $message;
@@ -24,6 +24,7 @@ class Alert
         return match ($this->type) {
             'success' => 'bi:check-circle',
             'danger' => 'bi:exclamation-circle',
+            default => 'bi:info-circle',
         };
     }
 }

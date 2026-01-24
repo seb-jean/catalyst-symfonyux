@@ -20,7 +20,7 @@ use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsLiveComponent('ProductGrid2')]
-class ProductGrid2
+final class ProductGrid2
 {
     use ComponentToolsTrait;
     use DefaultActionTrait;
@@ -34,6 +34,9 @@ class ProductGrid2
     {
     }
 
+    /**
+     * @return list<array{id: int, emoji: string}>
+     */
     public function getItems(): array
     {
         $items = [];

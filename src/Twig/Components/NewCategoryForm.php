@@ -23,7 +23,7 @@ use Symfony\UX\LiveComponent\LiveResponder;
 use Symfony\UX\LiveComponent\ValidatableComponentTrait;
 
 #[AsLiveComponent]
-class NewCategoryForm
+final class NewCategoryForm
 {
     use ComponentToolsTrait;
     use DefaultActionTrait;

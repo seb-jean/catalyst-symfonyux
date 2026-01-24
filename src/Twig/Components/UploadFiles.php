@@ -22,7 +22,7 @@ use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent]
-class UploadFiles
+final class UploadFiles
 {
     use DefaultActionTrait;
 
@@ -35,6 +35,7 @@ class UploadFiles
     #[LiveProp]
     public ?string $singleFileUploadError = null;
 
+    /** @var list<array{filename: string, size: int|false}> */
     #[LiveProp]
     public array $multipleUploadFilenames = [];
 
@@ -59,6 +60,9 @@ class UploadFiles
         }
     }
 
+    /**
+     * @return array{0: string, 1: int|false}
+     */
     private function processFileUpload(UploadedFile $file): array
     {
         // in a real app, move this file somewhere
@@ -82,6 +86,6 @@ class UploadFiles
         $this->singleFileUploadError = $errors->get(0)->getMessage();
 
         // causes the component to re-render
-        throw new UnprocessableEntityHttpException('Validation failed');
+        throw new UnprocessableEntityHttpException('Validation failed.');
     }
 }

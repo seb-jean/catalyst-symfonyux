@@ -13,8 +13,12 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\UX\Dropzone\Form\DropzoneType;
 
+/**
+ * @extends AbstractType<array{file?: File}>
+ */
 class DropzoneForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void

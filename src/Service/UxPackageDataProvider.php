@@ -21,6 +21,9 @@ class UxPackageDataProvider
     ) {
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getPackages(): array
     {
         $packages = $this->packageRepository->findAll();

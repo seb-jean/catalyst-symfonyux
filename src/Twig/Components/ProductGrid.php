@@ -19,7 +19,7 @@ use Symfony\UX\LiveComponent\ComponentToolsTrait;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent('ProductGrid')]
-class ProductGrid
+final class ProductGrid
 {
     use ComponentToolsTrait;
     use DefaultActionTrait;
@@ -44,6 +44,9 @@ class ProductGrid
         return \count($this->emojis) > ($this->page * self::PER_PAGE);
     }
 
+    /**
+     * @return list<array{id: int, emoji: string, color: string}>
+     */
     public function getItems(): array
     {
         $emojis = $this->emojis->paginate($this->page, self::PER_PAGE);
@@ -61,6 +64,9 @@ class ProductGrid
         return $items;
     }
 
+    /**
+     * @return list<string>
+     */
     public function getColors(): array
     {
         return [

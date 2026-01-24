@@ -18,17 +18,20 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsTwigComponent]
-class HomepageTerminalSwapper
+final class HomepageTerminalSwapper
 {
     public function __construct(private UxPackageRepository $packageRepository)
     {
     }
 
+    /**
+     * @return list<string>
+     */
     #[ExposeInTemplate]
     public function getTypedStrings(): array
     {
         $strings = [];
-        $packages = array_filter($this->packageRepository->findAll(), fn (UxPackage $p): bool => null !== $p->getCreateString());
+        $packages = array_filter($this->packageRepository->findAll(), static fn (UxPackage $p): bool => null !== $p->getCreateString());
 
         shuffle($packages);
 

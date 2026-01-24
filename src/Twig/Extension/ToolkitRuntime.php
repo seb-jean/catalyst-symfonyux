@@ -24,6 +24,9 @@ final class ToolkitRuntime implements RuntimeExtensionInterface
     ) {
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function codeExample(string $kitId, string $recipeName, string $exampleName, array $options = [], bool $preview = true): string
     {
         $kitId = ToolkitKitId::from($kitId);
@@ -76,11 +79,17 @@ final class ToolkitRuntime implements RuntimeExtensionInterface
         );
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function codeDemo(string $kitId, string $recipeName, array $options = []): string
     {
         return $this->codeExample($kitId, $recipeName, 'Demo', $options + ['height' => '450px'], preview: true);
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function codeUsage(string $kitId, string $recipeName, array $options = []): string
     {
         return $this->codeExample($kitId, $recipeName, 'Usage', $options, preview: false);

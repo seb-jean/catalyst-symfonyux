@@ -37,7 +37,7 @@ class SourceCleaner
 
             // Unindent all lines by 4 spaces
             $lines = explode("\n", $contents);
-            $lines = array_map(function (string $line) {
+            $lines = array_map(static function (string $line) {
                 return substr($line, 4);
             }, $lines);
             $contents = u(implode("\n", $lines));
@@ -50,7 +50,7 @@ class SourceCleaner
     {
         $lines = explode("\n", $content);
 
-        $lines = array_map(function (string $line) {
+        $lines = array_map(static function (string $line) {
             $line = trim($line);
 
             if (!$line) {
@@ -129,7 +129,7 @@ class SourceCleaner
         }
 
         // remove the minimum indentation from each line
-        $blockLines = array_map(function (string $line) use ($leastIndentedLineCount) {
+        $blockLines = array_map(static function (string $line) use ($leastIndentedLineCount) {
             return substr($line, $leastIndentedLineCount);
         }, $blockLines);
 
@@ -156,7 +156,7 @@ class SourceCleaner
     public static function removeExcessHtml(string $content): string
     {
         // remove all HTML attributes and values + whitespace around them
-        $content = preg_replace_callback('/\s+[a-z0-9-]+="[^"]*"/', function ($matches) {
+        $content = preg_replace_callback('/\s+[a-z0-9-]+="[^"]*"/', static function ($matches) {
             if (str_starts_with(trim($matches[0]), 'data-')) {
                 return $matches[0];
             }
@@ -167,12 +167,10 @@ class SourceCleaner
         // Find all the <div> elements without attributes
         preg_match_all('/<div>\s*(.*?)\s*<\/div>/s', $content, $matches);
 
-        if (isset($matches[1])) {
-            // Loop through the found matches
-            foreach ($matches[1] as $match) {
-                // Replace the div tags without attributes with their content
-                $content = preg_replace('/<div>\s*'.preg_quote($match, '/').'\s*<\/div>/s', $match, $content);
-            }
+        // Loop through the found matches
+        foreach ($matches[1] as $match) {
+            // Replace the div tags without attributes with their content
+            $content = preg_replace('/<div>\s*'.preg_quote($match, '/').'\s*<\/div>/s', $match, $content);
         }
 
         $lines = explode("\n", $content);

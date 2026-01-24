@@ -28,7 +28,7 @@ use Symfony\UX\TwigComponent\Attribute\PostMount;
     name: 'LiveMemory:Timer',
     template: 'demos/live_memory/components/LiveMemory/Timer.html.twig',
 )]
-class Timer
+final class Timer
 {
     use ComponentToolsTrait;
     use DefaultActionTrait;
@@ -101,17 +101,17 @@ class Timer
         return $remainingTime <= ($this->warningThreshold * 1000);
     }
 
-    public function hydrateDate(?string $startedAt): ?\DateTimeImmutable
+    public function hydrateDate(string $startedAt): \DateTimeImmutable
     {
-        if (null === $startedAt || '' === $startedAt) {
-            return null;
+        if ('' === $startedAt) {
+            return new \DateTimeImmutable();
         }
 
         return \DateTimeImmutable::createFromFormat('U', $startedAt);
     }
 
-    public function dehydrateDate(?\DateTimeImmutable $startedAt): ?string
+    public function dehydrateDate(\DateTimeImmutable $startedAt): string
     {
-        return (string) $startedAt?->format('U');
+        return (string) $startedAt->format('U');
     }
 }

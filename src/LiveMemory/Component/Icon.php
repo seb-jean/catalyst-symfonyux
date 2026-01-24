@@ -26,7 +26,7 @@ use function Symfony\Component\String\u;
     name: 'LiveMemory:Icon',
     template: 'demos/live_memory/components/LiveMemory/Icon.html.twig',
 )]
-class Icon
+final class Icon
 {
     /**
      * Name of the icon file without extension (ex: `symfony-ux`).
@@ -38,7 +38,7 @@ class Icon
      */
     public ?string $label = null;
 
-    protected string $iconDirectory;
+    private string $iconDirectory;
 
     public function __construct(
         #[Autowire('%kernel.project_dir%')] string $projectDir,

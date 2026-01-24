@@ -28,7 +28,7 @@ use Symfony\UX\LiveComponent\ValidatableComponentTrait;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsLiveComponent]
-class NewProductForm extends AbstractController
+final class NewProductForm extends AbstractController
 {
     use DefaultActionTrait;
     use ValidatableComponentTrait;
@@ -48,6 +48,9 @@ class NewProductForm extends AbstractController
     #[NotBlank]
     public ?Category $category = null;
 
+    /**
+     * @return list<Category>
+     */
     #[ExposeInTemplate]
     public function getCategories(): array
     {

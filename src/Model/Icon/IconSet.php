@@ -29,6 +29,15 @@ class IconSet
     public const CATEGORY_ARCHIVE_UNMAINTAINED = 'Archive / Unmaintained';
     public const CATEGORY_UNCATEGORIZED = 'Uncategorized';
 
+    /**
+     * @param array<string, mixed>        $author
+     * @param array<string, mixed>        $license
+     * @param list<string>|null           $samples
+     * @param array<string, int>|int|null $height
+     * @param list<string>|null           $tags
+     * @param array<string, string>|null  $suffixes
+     * @param array<string, mixed>|null   $categories
+     */
     public function __construct(
         private string $identifier,
         private string $name,
@@ -63,11 +72,17 @@ class IconSet
         return $this->name;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getAuthor(): array
     {
         return $this->author;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getLicense(): array
     {
         return $this->license;
@@ -83,11 +98,17 @@ class IconSet
         return $this->version;
     }
 
-    public function getSamples(): array
+    /**
+     * @return list<string>|null
+     */
+    public function getSamples(): ?array
     {
         return $this->samples;
     }
 
+    /**
+     * @return array<string, int>|int|null
+     */
     public function getHeight(): array|int|null
     {
         return $this->height;
@@ -103,6 +124,9 @@ class IconSet
         return $this->category;
     }
 
+    /**
+     * @return list<string>|null
+     */
     public function getTags(): ?array
     {
         return $this->tags;
@@ -113,11 +137,17 @@ class IconSet
         return $this->palette;
     }
 
+    /**
+     * @return array<string, string>|null
+     */
     public function getSuffixes(): ?array
     {
         return $this->suffixes;
     }
 
+    /**
+     * @return array<string, mixed>|null
+     */
     public function getCategories(): ?array
     {
         return $this->categories;
@@ -133,6 +163,9 @@ class IconSet
         return $this->isFavorite ?? false;
     }
 
+    /**
+     * @return array<string, string>|null
+     */
     public function getGithub(): ?array
     {
         $urls = [

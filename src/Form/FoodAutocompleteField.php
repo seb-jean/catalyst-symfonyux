@@ -12,12 +12,16 @@
 namespace App\Form;
 
 use App\Entity\Food;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Count;
 use Symfony\UX\Autocomplete\Form\AsEntityAutocompleteField;
 use Symfony\UX\Autocomplete\Form\BaseEntityAutocompleteType;
 
+/**
+ * @extends AbstractType<Collection<int, Food>>
+ */
 #[AsEntityAutocompleteField]
 class FoodAutocompleteField extends AbstractType
 {

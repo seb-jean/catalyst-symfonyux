@@ -25,6 +25,9 @@ class RedirectUrlTest extends WebTestCase
         $this->assertResponseRedirects($expectedUrl, $expectedStatusCode);
     }
 
+    /**
+     * @return list<array{0: string, 1: string, 2: int}>
+     */
     protected static function getRedirectionTests(): array
     {
         return [

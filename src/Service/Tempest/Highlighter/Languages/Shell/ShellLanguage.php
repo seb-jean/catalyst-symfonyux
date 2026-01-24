@@ -23,6 +23,9 @@ class ShellLanguage extends BaseLanguage
         return 'shell';
     }
 
+    /**
+     * @return list<string>
+     */
     public function getAliases(): array
     {
         return ['bash', 'sh'];

@@ -14,7 +14,7 @@ namespace App\Twig\Components\Code;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('Code:CodeWithExplanationRow')]
-class CodeWithExplanationRow
+final class CodeWithExplanationRow
 {
     public string $filename;
 

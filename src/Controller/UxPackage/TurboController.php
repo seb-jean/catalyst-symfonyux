@@ -148,6 +148,7 @@ class TurboController extends AbstractController
         }
     }
 
+    /** @var array<string> */
     private static array $messages = [
         'Hey!',
         'Hola!',

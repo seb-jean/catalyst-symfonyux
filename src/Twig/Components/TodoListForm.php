@@ -21,7 +21,7 @@ use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\LiveComponent\LiveCollectionTrait;
 
 #[AsLiveComponent]
-class TodoListForm extends AbstractController
+final class TodoListForm extends AbstractController
 {
     use DefaultActionTrait;
     use LiveCollectionTrait;
@@ -29,6 +29,9 @@ class TodoListForm extends AbstractController
     #[LiveProp(fieldName: 'formData')]
     public ?TodoList $todoList;
 
+    /**
+     * @return FormInterface<TodoList>
+     */
     protected function instantiateForm(): FormInterface
     {
         return $this->createForm(

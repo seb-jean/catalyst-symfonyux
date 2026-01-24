@@ -24,7 +24,7 @@ final class GameLevels
      *  nbCards = (level + 2) * 2
      *  timeLimit = level * 20
      *
-     * @var array<int, array{nbCards: int, theme: string, timeLimit: int, grid: string}>
+     * @var array<int, array{0: int, 1: string, 2: int, 3: string}>
      */
     private const LEVEL_METADATA = [
         1 => [6, 'blue', 20, '3x2'],

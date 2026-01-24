@@ -13,6 +13,9 @@ namespace App\Model;
 
 class Demo
 {
+    /**
+     * @param list<string> $tags
+     */
     public function __construct(
         private string $identifier,
         private string $name,

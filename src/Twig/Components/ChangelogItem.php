@@ -14,8 +14,11 @@ namespace App\Twig\Components;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('ChangelogItem')]
-class ChangelogItem
+final class ChangelogItem
 {
+    /**
+     * @var array{id: int, name?: string, version: string, date: string, body?: string}
+     */
     public array $item;
 
     public bool $isOpen = false;

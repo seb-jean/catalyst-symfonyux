@@ -23,7 +23,7 @@ use Symfony\UX\LiveComponent\ValidatableComponentTrait;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsLiveComponent]
-class InvoiceCreatorLineItem
+final class InvoiceCreatorLineItem
 {
     use DefaultActionTrait;
     use ValidatableComponentTrait;
@@ -73,6 +73,9 @@ class InvoiceCreatorLineItem
         $this->changeEditMode(true, $responder);
     }
 
+    /**
+     * @return list<Product>
+     */
     #[ExposeInTemplate]
     public function getProducts(): array
     {

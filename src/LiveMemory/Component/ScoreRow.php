@@ -23,7 +23,7 @@ use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
     name: 'LiveMemory:ScoreRow',
     template: 'demos/live_memory/components/LiveMemory/ScoreRow.html.twig',
 )]
-class ScoreRow
+final class ScoreRow
 {
     public string $label;
 

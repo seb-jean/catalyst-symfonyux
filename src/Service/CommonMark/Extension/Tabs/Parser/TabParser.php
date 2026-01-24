@@ -24,7 +24,6 @@ use League\CommonMark\Parser\MarkdownParserStateInterface;
 final class TabParser extends AbstractBlockContinueParser
 {
     private Tab $block;
-    private bool $finished = false;
 
     public function __construct(string $title)
     {

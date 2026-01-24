@@ -36,7 +36,7 @@ use Symfony\UX\TwigComponent\Attribute\PostMount;
     name: 'LiveMemory:Board',
     template: 'demos/live_memory/components/LiveMemory/Board.html.twig',
 )]
-class Board extends AbstractController
+final class Board extends AbstractController
 {
     use ComponentToolsTrait;
     use DefaultActionTrait;
@@ -168,6 +168,9 @@ class Board extends AbstractController
         }
     }
 
+    /**
+     * @return array<int, array<string, bool|string>>
+     */
     #[ExposeInTemplate('cards')]
     public function getCards(): array
     {

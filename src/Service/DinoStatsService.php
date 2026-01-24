@@ -13,6 +13,9 @@ namespace App\Service;
 
 class DinoStatsService
 {
+    /**
+     * @var array<string, mixed>|null
+     */
     private ?array $rawData = null;
 
     private const ALL_DINOS = 'all';
@@ -32,6 +35,9 @@ class DinoStatsService
         'de3267',
     ];
 
+    /**
+     * @return list<string>
+     */
     public static function getAllTypes(): array
     {
         return [
@@ -45,13 +51,18 @@ class DinoStatsService
         ];
     }
 
+    /**
+     * @param list<string> $types
+     *
+     * @return array{labels: list<string>, datasets: list<array<string, mixed>>}
+     */
     public function fetchData(int $start, int $end, array $types): array
     {
         $start = abs($start);
         $end = abs($end);
 
         $steps = 10;
-        $step = round(($start - $end) / $steps);
+        $step = (int) round(($start - $end) / $steps);
 
         $labels = [];
         for ($i = 0; $i < $steps; ++$i) {
@@ -83,6 +94,9 @@ class DinoStatsService
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function getRawData(): array
     {
         if (null === $this->rawData) {
@@ -92,11 +106,14 @@ class DinoStatsService
         return $this->rawData;
     }
 
+    /**
+     * @return list<int>
+     */
     private function getSpeciesCounts(int $start, int $steps, int $step, string $type): array
     {
         $counts = [];
         for ($i = 0; $i < $steps; ++$i) {
-            $current = round($start - ($i * $step));
+            $current = (int) round($start - ($i * $step));
             $counts[] = $this->countSpeciesAt($current, $type);
         }
 

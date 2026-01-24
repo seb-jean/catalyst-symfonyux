@@ -15,7 +15,7 @@ use App\Model\UxPackage;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('PackageBox')]
-class PackageBox
+final class PackageBox
 {
     public UxPackage $package;
 

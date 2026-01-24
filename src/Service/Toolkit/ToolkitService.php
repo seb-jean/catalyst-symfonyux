@@ -68,10 +68,7 @@ class ToolkitService
     }
 
     /**
-     * @return array<string, array{
-     *     props: array<array{name: string, type: string, description: string}>,
-     *     blocks: array<array{name: string, description: string}>
-     * }
+     * @return array<string, array{props: list<array{name: string, type: string, description: string}>, blocks: list<array{name: string, description: string}>}>
      */
     public function extractRecipeApiReference(Recipe $recipe): array
     {

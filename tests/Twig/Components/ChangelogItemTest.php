@@ -19,9 +19,14 @@ class ChangelogItemTest extends TestCase
     public function testSetItem()
     {
         $component = new ChangelogItem();
-        $component->item = ['body' => 'foobar'];
+        $component->item = [
+            'id' => 1,
+            'name' => 'Test',
+            'version' => 'v1.0.0',
+            'date' => '2024-01-01',
+            'body' => 'foobar',
+        ];
 
-        $this->assertSame(['body' => 'foobar'], $component->item);
         $this->assertSame('foobar', $component->getContent());
     }
 
@@ -32,12 +37,19 @@ class ChangelogItemTest extends TestCase
     {
         $component = new ChangelogItem();
         $component->item = [
+            'id' => 1,
+            'name' => 'Test',
+            'version' => 'v1.0.0',
+            'date' => '2024-01-01',
             'body' => $body,
         ];
 
         $this->assertSame($expected, $component->getContent());
     }
 
+    /**
+     * @return iterable<string, array{0: string, 1: string}>
+     */
     public static function provideContentValues(): iterable
     {
         yield 'keep_existing_h1' => [

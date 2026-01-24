@@ -38,6 +38,9 @@ class Invoice
     #[Assert\Range(min: 0, max: 100)]
     private int $taxRate = 0;
 
+    /**
+     * @var Collection<int, InvoiceItem>
+     */
     #[ORM\OneToMany(mappedBy: 'invoice', targetEntity: InvoiceItem::class, orphanRemoval: true)]
     private Collection $invoiceItems;
 

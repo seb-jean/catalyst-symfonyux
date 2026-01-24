@@ -15,7 +15,7 @@ use App\Model\Icon\IconSet;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 #[AsTwigComponent('Icon:IconSetCard')]
-class IconSetCard
+final class IconSetCard
 {
     public IconSet $iconSet;
 
@@ -62,6 +62,9 @@ class IconSetCard
         ],
     ];
 
+    /**
+     * @return list<string>
+     */
     public function getSampleIcons(): array
     {
         return self::ICONSET_SAMPLES[$this->iconSet->getIdentifier()] ?? [];
