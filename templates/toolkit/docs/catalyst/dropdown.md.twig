@@ -1,0 +1,63 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Dropdown`, `DropdownButton`, `DropdownMenu`, and `DropdownItem` components to build a basic dropdown menu:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### Button style
+The `DropdownButton` component is rendered as a `Button` by default and directly accepts all of the same styling props, such as `color`, `outline`, and `plain`:
+{{ toolkit_code_example(kit_id.value, component.name, 'Button style') }}
+
+### Menu placement
+Use the `anchor` prop on the `DropdownMenu` component to position the dropdown menu relative to the trigger:
+{{ toolkit_code_example(kit_id.value, component.name, 'Menu placement') }}
+
+### With disabled items
+Use the `disabled` prop on a `DropdownItem` to disable that item and prevent it from being selected:
+{{ toolkit_code_example(kit_id.value, component.name, 'With disabled items') }}
+
+### With sections
+Use the `DropdownSection`, `DropdownHeading`, and `DropdownDivider` components to group dropdown items into sections:
+{{ toolkit_code_example(kit_id.value, component.name, 'With sections') }}
+
+### With descriptions
+Use the `DropdownDescription` component along with a `DropdownLabel` to add a description to a dropdown item:
+{{ toolkit_code_example(kit_id.value, component.name, 'With descriptions') }}
+
+### With icons
+Add an icon as the first child of a `DropdownItem` to render it alongside the `DropdownLabel`:
+{{ toolkit_code_example(kit_id.value, component.name, 'With icons') }}
+
+### With keyboard shortcuts
+Use the `DropdownShortcut` component along with a `DropdownLabel` to surface any keyboard shortcuts you've implemented in your application:
+{{ toolkit_code_example(kit_id.value, component.name, 'With keyboard shortcuts') }}
+
+### With header
+Use the `DropdownHeader` component to add a custom header section to the top of a dropdown menu:
+{{ toolkit_code_example(kit_id.value, component.name, 'With header') }}
+
+### With disabled button
+Use the `disabled` prop on the `DropdownButton` component to disable a dropdown:
+{{ toolkit_code_example(kit_id.value, component.name, 'With disabled button') }}
+
+### With icon trigger
+Use a `DropdownButton` with the `plain` prop in combination with an icon to make an icon-only dropdown trigger:
+{{ toolkit_code_example(kit_id.value, component.name, 'With icon trigger') }}
+
+### With avatar trigger
+Render the `DropdownButton` component as an `AvatarButton` component to use an avatar as the dropdown trigger:
+{{ toolkit_code_example(kit_id.value, component.name, 'With avatar trigger') }}
+
+### With custom trigger
+Use the `MenuButton` component from `@headlessui/react` directly to render your own custom dropdown trigger:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom trigger') }}
+
+### With custom menu width
+Use `min-w-*` utilities to increase the minimum width of a `DropdownMenu`, and `max-w-*` utilities to prevent it from getting wider than a specific size:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom menu width') }}
+{% endblock %}

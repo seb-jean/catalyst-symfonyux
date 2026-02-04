@@ -1,0 +1,39 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `RadioGroup`, `RadioField`, `Radio`, and `Label` components to create a simple radio group:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### With description
+Use the `RadioField`, `Label`, and `Description` components to add a description below the radio:
+{{ toolkit_code_example(kit_id.value, component.name, 'With description') }}
+
+### With custom layout
+Use the `Radio` component with the unstyled components from `@headlessui/react` to implement custom layouts that still use the styled radio button:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom layout') }}
+
+### With accent color
+Use the `color` prop to choose a different accent color for a checkbox:
+{{ toolkit_code_example(kit_id.value, component.name, 'With accent color') }}
+
+### Default selected state
+Use the `defaultValue` prop to set the default selected option for a `RadioGroup`:
+{{ toolkit_code_example(kit_id.value, component.name, 'Default selected state') }}
+
+### Controlled component
+Use the `value` and `onChange` props to use a `RadioGroup` as a controlled component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Controlled component') }}
+
+### With fieldset
+Use the `Fieldset`, `Legend`, and `Text` components to add a title and description to a radio group:
+{{ toolkit_code_example(kit_id.value, component.name, 'With fieldset') }}
+
+### Disabled state
+Add the `disabled` prop to a `Radio` or `RadioField` component to disable it:
+{{ toolkit_code_example(kit_id.value, component.name, 'Disabled state') }}
+{% endblock %}

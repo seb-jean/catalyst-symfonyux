@@ -1,0 +1,40 @@
+{# @prop src string The URL of the avatar image #}
+{# @prop square boolean Whether to make the avatar square, default to `false` #}
+{# @prop initials string The initials to use when no src is provided #}
+{# @prop alt string The alt text of the avatar image #}
+{%- props src = null, square = false, initials = null, alt = '' -%}
+{%- set style = html_cva(
+    base: [
+        # Basic layout
+        'inline-grid shrink-0 align-middle [--avatar-radius:20%] *:col-start-1 *:row-start-1',
+        'outline -outline-offset-1 outline-black/10 dark:outline-white/10',
+    ],
+    variants: {
+        square: {
+            # Border radius
+            true: 'rounded-(--avatar-radius) *:rounded-(--avatar-radius)',
+            false: 'rounded-full *:rounded-full',
+        },
+    },
+) -%}
+<span
+    data-slot="avatar"
+    class="{{ style.apply({square}, attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {%- if initials -%}
+        <svg
+            class="size-full fill-current p-[5%] text-[48px] font-medium uppercase select-none"
+            viewBox="0 0 100 100"
+            {{ not alt ? 'aria-hidden="true"' }}
+        >
+            {%- if alt -%}<title>{{ alt }}</title>{%- endif -%}
+            <text x="50%" y="50%" alignment-baseline="middle" dominant-baseline="middle" text-anchor="middle" dy=".125em">
+                {{- initials -}}
+            </text>
+        </svg>
+    {%- endif -%}
+    {%- if src -%}
+        <img class="size-full" src="{{ src }}" alt="{{ alt }}">
+    {%- endif -%}
+</span>

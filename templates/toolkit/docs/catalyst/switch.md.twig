@@ -1,0 +1,51 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Switch` component on its own to render a standalone switch without an associated `Label` component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### With label
+Wrap a `Label` and `Switch` with the `SwitchField` component to automatically associate them using a generated ID:
+{{ toolkit_code_example(kit_id.value, component.name, 'With label') }}
+
+### With description
+Use the `SwitchField`, `Label`, and `Description` components to add a label and description to a switch:
+{{ toolkit_code_example(kit_id.value, component.name, 'With description') }}
+
+### With custom layout
+Use the unstyled `Field` component from `@headlessui/react` directly instead of the styled `SwitchField` component to implement a custom layout:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom layout') }}
+
+### With accent color
+Use the `color` prop to choose a different accent color for a switch:
+{{ toolkit_code_example(kit_id.value, component.name, 'With accent color') }}
+
+### With custom value
+Use the `value` prop to specify a custom value to use when submitting a form:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom value') }}
+
+### Default checked state
+Use the `defaultChecked` prop to set the default state when using the `Switch` as an uncontrolled component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Default checked state') }}
+
+### Controlled component
+Use the `checked` and `onChange` props to use a `Switch` as a controlled component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Controlled component') }}
+
+### Multiple switches
+Use the `SwitchGroup` component to stack multiple switches together in a list:
+{{ toolkit_code_example(kit_id.value, component.name, 'Multiple switches') }}
+
+### With fieldset
+Use the `Fieldset`, `Legend`, and `Text` components to add a title and description to a group of switches:
+{{ toolkit_code_example(kit_id.value, component.name, 'With fieldset') }}
+
+### Disabled state
+Add the `disabled` prop to a `Switch` or `SwitchField` component to disable it:
+{{ toolkit_code_example(kit_id.value, component.name, 'Disabled state') }}
+{% endblock %}

@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Combobox",
+    "description": "For when you know exactly what you want, but are too lazy to scroll for it.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

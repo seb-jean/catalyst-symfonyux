@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Input",
+    "description": "If web applications didn't need inputs, computers wouldn't have keyboards.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

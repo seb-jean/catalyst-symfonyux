@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Listbox",
+    "description": "A painstakingly re-engineered select menu, just so you can put a flag in it or have a placeholder.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Heading",
+    "description": "You get two — we're building applications here, not authoring medical journals.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

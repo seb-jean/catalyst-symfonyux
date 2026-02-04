@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Checkbox",
+    "description": "People need to be able to accept the terms and conditions they don't read somehow.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

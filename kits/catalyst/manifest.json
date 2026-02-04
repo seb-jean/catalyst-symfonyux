@@ -1,0 +1,7 @@
+{
+    "$schema": "../../schema-kit-v1.json",
+    "name": "Catalyst",
+    "description": "Component based on the Catalyst library, a modern application UI kit built with Tailwind CSS designed and built by the Tailwind CSS team.",
+    "license": "MIT",
+    "homepage": "https://ux.symfony.com/toolkit/kits/shadcn"
+}

@@ -1,0 +1,7 @@
+{# @block content The default block #}
+<span
+    class="{{ (attributes.render('class') ~ ' hidden items-baseline gap-x-2 sm:flex')|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</span>

@@ -1,0 +1,10 @@
+{# @prop ariaLabel string The name to use when describing the pagination section for screen readers, default to `Page navigation` #}
+{# @block content The default block #}
+{%- props ariaLabel = 'Page navigation' -%}
+<nav
+    aria-label="{{ ariaLabel }}"
+    class="{{ (attributes.render('class') ~ ' flex gap-x-2')|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</nav>

@@ -1,0 +1,10 @@
+{# @prop level integer The heading level (1-6), default to `1` #}
+{# @block content The default block #}
+{%- props level = 1 -%}
+{%- set element = 'h' ~ level -%}
+<{{ element }}
+    class="{{ (attributes.render('class') ~ ' text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 dark:text-white')|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</{{ element }}>

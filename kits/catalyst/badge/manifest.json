@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Badge",
+    "description": "Eventually this custom CMS you're probably building is going to need tags.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

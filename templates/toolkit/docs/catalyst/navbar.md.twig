@@ -1,0 +1,47 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Navbar`, `NavbarSection` and `NavbarItem` components to build a basic navbar with navigation links:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### With logo
+Add your own logo as an image or component at the beginning of your navbar:
+{{ toolkit_code_example(kit_id.value, component.name, 'With logo') }}
+
+### With active state
+Use the `current` prop to specify which `NavbarItem` is the current navigation item:
+{{ toolkit_code_example(kit_id.value, component.name, 'With active state') }}
+
+### With icon links
+Use an icon as the only child of a `NavbarItem` to create icon-only links:
+{{ toolkit_code_example(kit_id.value, component.name, 'With icon links') }}
+
+### With space between items
+Use the `NavbarSpacer` component to add space between items in the navbar:
+{{ toolkit_code_example(kit_id.value, component.name, 'With space between items') }}
+
+### With divider
+Use the `NavbarDivider` component to add a dividing line between items in the navbar:
+{{ toolkit_code_example(kit_id.value, component.name, 'With divider') }}
+
+### With dropdown
+Use the `Dropdown` component add a dropdown menu to a navbar by rendering the `DropdownButton` as a `NavbarItem`:
+{{ toolkit_code_example(kit_id.value, component.name, 'With dropdown') }}
+
+### With avatar dropdown
+Use the `Dropdown` component with an `Avatar` to add an avatar-only dropdown to a navbar:
+{{ toolkit_code_example(kit_id.value, component.name, 'With avatar dropdown') }}
+
+### With mobile menu
+If you'd like to add a mobile menu to a navbar, use the `StackedLayout` component which includes a navbar and a sidebar for mobile:
+{{ toolkit_code_example(kit_id.value, component.name, 'With mobile menu') }}
+
+### Hiding items on mobile
+Use utility classes like `max-lg:hidden` to hide certain navbar items at different screen sizes:
+{{ toolkit_code_example(kit_id.value, component.name, 'Hiding items on mobile') }}
+{% endblock %}

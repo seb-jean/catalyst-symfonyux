@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Button",
+    "description": "You know, those things you click to do just about anything in a web application.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

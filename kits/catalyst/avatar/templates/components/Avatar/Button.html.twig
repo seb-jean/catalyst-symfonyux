@@ -1,0 +1,25 @@
+{# @prop src string The URL of the avatar image #}
+{# @prop square boolean Whether to make the avatar square, default to `false` #}
+{# @prop initials string The initials to use when no src is provided #}
+{# @prop alt string The alt text of the avatar image #}
+{%- props src = null, square = false, initials = null, alt = '' -%}
+{%- set element = attributes.has('href') ? 'a' : 'button' -%}
+{%- set style = html_cva(
+    base: 'relative inline-grid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
+    variants: {
+        square: {
+            true: 'rounded-[20%]',
+            false: 'rounded-full',
+        },
+    },
+) -%}
+<{{ element }}
+    class="{{ style.apply({square}, attributes.render('class')) }}"
+    {{ attributes.defaults({
+        type: element == 'button' ? 'button' : false,
+    }) }}
+>
+    <twig:Button:TouchTarget>
+        <twig:Avatar :src="src" :square="square" :initials="initials" :alt="alt" />
+    </twig:Button:TouchTarget>
+</{{ element }}>

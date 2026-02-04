@@ -1,0 +1,13 @@
+@import url("https://rsms.me/inter/inter.css");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: Inter, sans-serif;
+    --font-sans--font-feature-settings: 'cv11';
+}
+
+.dark {
+    background-color: var(--color-zinc-900);
+}

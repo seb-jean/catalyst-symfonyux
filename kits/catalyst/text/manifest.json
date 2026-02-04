@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Text",
+    "description": "For all the lorem ipsum in your Figma designs that you're definitely going to replace with real copy before launch.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

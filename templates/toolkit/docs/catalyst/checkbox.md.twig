@@ -1,0 +1,58 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Checkbox` component on its own to render a standalone checkbox without an associated `Label` component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### With label
+Wrap a `Label` and `Checkbox` with the `CheckboxField` component to automatically associate them using a generated ID:
+{{ toolkit_code_example(kit_id.value, component.name, 'With label') }}
+
+### With description
+Use the `CheckboxField`, `Label`, and `Description` components to add a description below the checkbox:
+{{ toolkit_code_example(kit_id.value, component.name, 'With description') }}
+
+### With custom layout
+Use the unstyled `Field` component from `@headlessui/react` directly instead of the styled `CheckboxField`:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom layout') }}
+
+### With accent color
+Use the `color` prop to choose a different accent color for a checkbox:
+{{ toolkit_code_example(kit_id.value, component.name, 'With accent color') }}
+
+### With custom value
+Use the `value` prop to specify a custom value to use when submitting a form:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom value') }}
+
+### Default checked state
+Use the `defaultChecked` prop to set the default state when using the `Checkbox` as an uncontrolled component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Default checked state') }}
+
+### Indeterminate state
+Use the `indeterminate` prop to indicate that the `Checkbox` is in an indeterminate state, neither toggled on nor off:
+{{ toolkit_code_example(kit_id.value, component.name, 'Indeterminate state') }}
+
+### Controlled component
+Use the `checked` and `onChange` props to use a `Checkbox` as a controlled component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Controlled component') }}
+
+### Multiple checkboxes
+Use the `CheckboxGroup` component to stack multiple checkboxes together in a list:
+{{ toolkit_code_example(kit_id.value, component.name, 'Multiple checkboxes') }}
+
+### With fieldset
+Use the `Fieldset`, `Legend`, and `Text` components to add a title and description to a group of checkboxes:
+{{ toolkit_code_example(kit_id.value, component.name, 'With fieldset') }}
+
+### Disabled state
+Add the `disabled` prop to a `Checkbox` or `CheckboxField` component to disable it:
+{{ toolkit_code_example(kit_id.value, component.name, 'Disabled state') }}
+
+### Color reference
+{{ toolkit_code_example(kit_id.value, component.name, 'Color reference') }}
+{% endblock %}

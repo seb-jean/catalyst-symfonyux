@@ -1,0 +1,7 @@
+{# @block content The default block #}
+<strong
+    class="{{ (attributes.render('class') ~ ' font-medium text-zinc-950 dark:text-white')|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</strong>{#--#}

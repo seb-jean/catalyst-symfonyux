@@ -1,0 +1,16 @@
+{# @prop soft boolean Whether the divider should use a softer color, default to `false` #}
+{%- props soft = false -%}
+{%- set style = html_cva(
+    base: 'w-full border-t',
+    variants: {
+        soft: {
+            true: 'border-zinc-950/5 dark:border-white/5',
+            false: 'border-zinc-950/10 dark:border-white/10',
+        },
+    },
+) -%}
+<hr
+    role="presentation"
+    class="{{ style.apply({soft}, attributes.render('class')) }}"
+    {{ attributes }}
+/>

@@ -1,0 +1,35 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Textarea` component on its own to render a standalone textarea without an associated `Label` component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### With label
+Wrap a `Label` and `Textarea` with the `Field` component to automatically associate them using a generated ID:
+{{ toolkit_code_example(kit_id.value, component.name, 'With label') }}
+
+### With description
+Use the `Description` component to add a description above or below your `Textarea`:
+{{ toolkit_code_example(kit_id.value, component.name, 'With description') }}
+
+### Disabled state
+Add the `disabled` prop to the `Field` component to disable an `Textarea` and the associated `Label`:
+{{ toolkit_code_example(kit_id.value, component.name, 'Disabled state') }}
+
+### Validation errors
+Add the `invalid` prop to the `Field` component to indicate a validation error, and render the error using the `ErrorMessage` component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Validation errors') }}
+
+### With custom layout
+Use the unstyled `Field` component from `@headlessui/react` directly instead of the styled `Field` component to implement a custom layout:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom layout') }}
+
+### Controlled component
+Use the normal `value` and `onChange` props to use the `Textarea` component as a controlled component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Controlled component') }}
+{% endblock %}

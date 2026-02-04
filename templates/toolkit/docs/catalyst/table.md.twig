@@ -1,0 +1,55 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Table`, `TableHead`, `TableBody`, `TableRow`, `TableHeader`, and `TableCell` components to build a table:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### Responsive tables
+Tables automatically become scrollable when they are wider than their container:
+{{ toolkit_code_example(kit_id.value, component.name, 'Responsive tables') }}
+
+### Full-width tables
+Use the `bleed` prop and set the CSS `--gutter` variable to match the padding of the containing element to make a table full-width:
+{{ toolkit_code_example(kit_id.value, component.name, 'Full-width tables') }}
+
+### Rows as links
+Use the `href` prop on the `TableRow` component to treat an entire row like a link:
+{{ toolkit_code_example(kit_id.value, component.name, 'Rows as links') }}
+
+### With condensed spacing
+Use the `dense` prop to render the table with condensed spacing:
+{{ toolkit_code_example(kit_id.value, component.name, 'With condensed spacing') }}
+
+### With grid lines
+Use the `grid` prop to render the table with vertical grid lines:
+{{ toolkit_code_example(kit_id.value, component.name, 'With grid lines') }}
+
+### With striped rows
+Use the `striped` prop to render the table with striped rows and no horizontal borders:
+{{ toolkit_code_example(kit_id.value, component.name, 'With striped rows') }}
+
+### With different heading color
+Use the `text-{color}` utilities on the `TableRow` component inside your `TableHead` to change the color of table headings:
+{{ toolkit_code_example(kit_id.value, component.name, 'With different heading color') }}
+
+### With complex content
+Tables are unopinionated about their content and will adapt to just about anything you include:
+{{ toolkit_code_example(kit_id.value, component.name, 'With complex content') }}
+
+### With pagination
+Add a `Pagination` component below your table to add pagination controls:
+{{ toolkit_code_example(kit_id.value, component.name, 'With pagination') }}
+
+### With dropdowns
+Use the `Dropdown` component within a `TableCell` to add a dropdown menu:
+{{ toolkit_code_example(kit_id.value, component.name, 'With dropdowns') }}
+
+### In dialog
+Add a `Table` to your `DialogBody` component to include a table in a dialog:
+{{ toolkit_code_example(kit_id.value, component.name, 'In dialog') }}
+{% endblock %}

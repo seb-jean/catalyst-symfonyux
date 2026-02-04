@@ -21,4 +21,5 @@ namespace App\Enum;
 enum ToolkitKitId: string
 {
     case Shadcn = 'shadcn';
+    case Catalyst = 'catalyst';
 }

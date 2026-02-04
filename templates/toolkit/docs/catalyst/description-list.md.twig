@@ -1,0 +1,15 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `DescriptionList`, `DescriptionTerm`, and `DescriptionDetails` components to build a description list:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### With heading
+Use the `Subheading` component to add a heading to the description list:
+{{ toolkit_code_example(kit_id.value, component.name, 'With heading') }}
+{% endblock %}

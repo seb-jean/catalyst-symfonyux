@@ -1,0 +1,18 @@
+{# @prop color string The color of the badge, default to `zinc` #}
+{# @block content The default block #}
+{%- props color = 'zinc' -%}
+{%- set element = attributes.has('href') ? 'a' : 'button' -%}
+<{{ element }}
+    class="{{ (attributes.render('class') ~ ' group relative inline-flex rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500')|trim }}"
+    {{ attributes.defaults({
+        type: element == 'button' ? 'button' : false,
+    }) }}
+>
+    <twig:Button:TouchTarget>
+        {% with {content: outerBlocks.content} %}
+            <twig:Badge :color="color">
+                {{ block(content) }}
+            </twig:Badge>
+        {% endwith %}
+    </twig:Button:TouchTarget>
+</{{ element }}>

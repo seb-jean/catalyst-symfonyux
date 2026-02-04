@@ -1,0 +1,59 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Combobox`, `ComboboxOption`, and `ComboboxLabel` components to build a basic combobox:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### With label
+Wrap a `Label` and `Combobox` with the `Field` component to automatically associate them using a generated ID:
+{{ toolkit_code_example(kit_id.value, component.name, 'With label') }}
+
+### With description
+Use the `Description` component to add a description above or below your `Combobox`:
+{{ toolkit_code_example(kit_id.value, component.name, 'With description') }}
+
+### With placeholder
+Use the `placeholder` prop to add a placeholder to your `Combobox` when no value is selected:
+{{ toolkit_code_example(kit_id.value, component.name, 'With placeholder') }}
+
+### With avatars
+Add an `Avatar` to a `ComboboxOption` by inserting it before your `ComboboxLabel`:
+{{ toolkit_code_example(kit_id.value, component.name, 'With avatars') }}
+
+### With flags
+Add a flag icon to a `ComboboxOption` by inserting it before your `ComboboxLabel`:
+{{ toolkit_code_example(kit_id.value, component.name, 'With flags') }}
+
+### With secondary text
+Use the `ComboboxDescription` component to add secondary text to a combobox option:
+{{ toolkit_code_example(kit_id.value, component.name, 'With secondary text') }}
+
+### Disabled state
+Add the `disabled` prop to the `Field` component to disable a `Combobox` and the associated `Label`:
+{{ toolkit_code_example(kit_id.value, component.name, 'Disabled state') }}
+
+### Validation errors
+Add the `invalid` prop to the `Combobox` component to indicate a validation error, and render using `ErrorMessage`:
+{{ toolkit_code_example(kit_id.value, component.name, 'Validation errors') }}
+
+### Constraining width
+Use the `className` prop on the `Combobox` component to adjust layout like max-width:
+{{ toolkit_code_example(kit_id.value, component.name, 'Constraining width') }}
+
+### With custom layout
+Use the unstyled `Field` component from `@headlessui/react` instead of the styled version for custom layouts:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom layout') }}
+
+### Controlled component
+Use the normal `value` and `onChange` props to use the `Combobox` as a controlled component:
+{{ toolkit_code_example(kit_id.value, component.name, 'Controlled component') }}
+
+### With custom filtering
+Use the `filter` prop to customize how the `Combobox` filters its options:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom filtering') }}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name, {height: '150px'}) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Text` component for any custom paragraph text that should match the style of the text built in to your other components:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example', {height: '150px'}) }}
+Paragraphs using `Text` are responsive and automatically adapt to dark mode.
+
+### With link
+Use the `Text:TextLink` component for any links within a `Text` component:
+{{ toolkit_code_example(kit_id.value, component.name, 'With link', {height: '150px'}) }}
+
+### With strong
+Use the `Text:Strong` component for any text you want to emphasize within a `Text` component:
+{{ toolkit_code_example(kit_id.value, component.name, 'With strong', {height: '150px'}) }}
+
+### With code
+Use the `Text:Code` component for any inline code symbols within a `Text` component:
+{{ toolkit_code_example(kit_id.value, component.name, 'With code', {height: '150px'}) }}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Pagination`, `Pagination:Previous`, `Pagination:List`, `Pagination:Page`, `Pagination:Gap`, and `Pagination:Next` components to create a set of pagination links:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### Disabling previous/next links
+Omit the `href` prop on the `Pagination:Previous` or `Pagination:Next` components to disable the previous/next links when on the first or last page:
+{{ toolkit_code_example(kit_id.value, component.name, 'Disabling previous-next links') }}
+
+### Current page active state
+Use the `current` prop on the `Pagination:Page` component to indicate the current page:
+{{ toolkit_code_example(kit_id.value, component.name, 'Current page active state') }}
+
+### Without page links
+Omit the `Pagination:List` and `Pagination:Page` components to render just the previous and next links:
+{{ toolkit_code_example(kit_id.value, component.name, 'Without page links') }}
+{% endblock %}

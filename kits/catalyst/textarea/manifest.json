@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Textarea",
+    "description": "For the times when you really just have a lot to say.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

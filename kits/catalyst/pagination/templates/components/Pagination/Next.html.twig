@@ -1,0 +1,16 @@
+{# @prop href string The URL to the next page. The link will be disabled when omitted #}
+{# @block content The default block #}
+{%- props href = null -%}
+<span class="{{ (attributes.render('class') ~ ' flex grow basis-0 justify-end')|trim }}">
+    <twig:Button
+        :href="href ?: false"
+        :disabled="href is null"
+        plain
+        aria-label="Next page"
+    >
+        {{- block(outerBlocks.content)|default('Next') -}}
+        <svg class="stroke-current" data-slot="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13.25 8L2.75 8M13.25 8L10.75 10.5M13.25 8L10.75 5.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </twig:Button>
+</span>

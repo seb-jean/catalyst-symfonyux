@@ -1,0 +1,9 @@
+{%- set user = {
+    avatarUrl: 'https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80'
+} -%}
+
+<div class="flex items-end gap-8">
+    <twig:Avatar class="size-6" src="{{ user.avatarUrl }}" />
+    <twig:Avatar class="size-8" src="{{ user.avatarUrl }}" />
+    <twig:Avatar class="size-10" src="{{ user.avatarUrl }}" />
+</div>

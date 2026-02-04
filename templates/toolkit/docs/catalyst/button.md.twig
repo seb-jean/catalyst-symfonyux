@@ -1,0 +1,36 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Button colors
+Use the `color` prop to set the button color:
+{{ toolkit_code_example(kit_id.value, component.name, 'Button colors') }}
+
+### Outline buttons
+Use the `outline` prop for a secondary button style with no shadows or background color:
+{{ toolkit_code_example(kit_id.value, component.name, 'Outline buttons') }}
+
+### Plain buttons
+Use the `plain` prop for a simple button style with no border, shadows or background color:
+{{ toolkit_code_example(kit_id.value, component.name, 'Plain buttons') }}
+
+### Disabled states
+Use the `disabled` prop to disable a button and apply disabled styles:
+{{ toolkit_code_example(kit_id.value, component.name, 'Disabled states') }}
+The `disabled` prop is not supported when using the `href` attribute.
+
+### With icon
+Icons may be place at the start or end of a button:
+{{ toolkit_code_example(kit_id.value, component.name, 'With icon') }}
+The `Button` component is designed to work best with 16×16 icons.
+
+If you're using your own custom icons, make sure they include the `data-slot="icon"` prop so they receive the correct styles.
+
+### Using as a link
+Add the `href` attribute to render an element `<a>` that has the same visual styling as a button:
+{{ toolkit_code_example(kit_id.value, component.name, 'Using as a link') }}
+Link buttons support all of the same props as regular buttons except `disabled`.
+{% endblock %}

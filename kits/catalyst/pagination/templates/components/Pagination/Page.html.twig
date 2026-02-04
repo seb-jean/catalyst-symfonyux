@@ -1,0 +1,18 @@
+{# @prop href string The URL to the page #}
+{# @prop current boolean Whether or not it is the current page, default to `false` #}
+{# @block content The default block #}
+{%- props href, current = false -%}
+{%- set content -%}{%- block content %}{% endblock -%}{%- endset -%}
+{%- set content = content|trim -%}
+<twig:Button
+    :href="href"
+    plain
+    aria-label="Page {{ content }}"
+    aria-current="{{ current ? 'page' : false }}"
+    class="{{ (attributes.render('class') ~ ' min-w-9 before:absolute before:-inset-px before:rounded-lg' ~ (current ? ' before:bg-zinc-950/5 dark:before:bg-white/10'))|trim }}"
+    {{ ...attributes }}
+>
+    <span class="-mx-0.5">
+        {{- content -}}
+    </span>
+</twig:Button>

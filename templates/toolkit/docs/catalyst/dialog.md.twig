@@ -1,0 +1,27 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+Use the `Dialog`, `DialogTitle`, `DialogDescription`, `DialogBody`, and `DialogActions` components to build a dialog:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example') }}
+
+### Dialog width
+Use the `size` prop on the `Dialog` component to control the max-width of the dialog:
+{{ toolkit_code_example(kit_id.value, component.name, 'Dialog width') }}
+
+### Opening from dropdown
+When opening a `Dialog` from a dropdown menu, make sure the dialog is rendered outside of the dropdown:
+{{ toolkit_code_example(kit_id.value, component.name, 'Opening from dropdown') }}
+
+### Auto-focusing elements
+Add the `autoFocus` prop to any form control or button in the dialog to automatically focus it when the dialog opens:
+{{ toolkit_code_example(kit_id.value, component.name, 'Auto-focusing elements') }}
+
+### With scrolling content
+Dialogs automatically become scrollable if their content is taller than the viewport:
+{{ toolkit_code_example(kit_id.value, component.name, 'With scrolling content') }}
+{% endblock %}

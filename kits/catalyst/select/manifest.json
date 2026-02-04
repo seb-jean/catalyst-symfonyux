@@ -1,0 +1,9 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Select",
+    "description": "Not a component I'd recommend using for a password field.",
+    "copy-files": {
+        "templates/": "templates/"
+    }
+}

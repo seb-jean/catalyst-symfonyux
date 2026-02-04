@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(symfony console tailwind:build:*)",
+      "WebFetch(domain:catalyst.tailwindui.com)"
+    ]
+  }
+}

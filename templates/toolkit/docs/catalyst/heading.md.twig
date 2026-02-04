@@ -1,0 +1,21 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name) }}
+{% endblock %}
+
+{% block examples %}
+### Basic heading example
+Use the `Heading` component to add a primary heading to a page:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic heading example') }}
+The `Heading` component renders an `h1` by default, which you can customize with the `level` prop.
+
+### Basic subheading example
+Use the `Subheading` component to add a subheading to a page:
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic subheading example') }}
+The `Subheading` component renders an `h2` by default, which you can customize with the `level` prop.
+
+### With custom level
+Use the `level` prop to render a different heading element for semantic purposes while still maintaining the same visual styles:
+{{ toolkit_code_example(kit_id.value, component.name, 'With custom level') }}
+{% endblock %}
