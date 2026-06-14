@@ -4,6 +4,10 @@ ux_icons:
 
     icon_sets:
 
+        heroicons:
+            icon_attributes:
+                data-slot: 'icon'
+
         # FeatureBox icons
         feature:
             alias: 'lucide'

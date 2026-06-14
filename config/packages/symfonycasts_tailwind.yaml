@@ -10,4 +10,5 @@ symfonycasts_tailwind:
         - assets/styles/toolkit-common.css
         - assets/styles/toolkit-shadcn.css
         - assets/styles/toolkit-flowbite-4.css
+        - assets/styles/toolkit-catalyst.css
         - assets/styles/demos/live-memory.css
